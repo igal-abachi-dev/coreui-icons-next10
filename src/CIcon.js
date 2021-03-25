@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import './CIcon.css'
+import styles from './CIcon.css'
 
 let warned = {}
 const colog = (msg, icon) => {
@@ -75,8 +75,8 @@ const CIcon = props => {
 
   //render
   const computedClasses = classNames(
-    'c-icon',
-    computedSize && `c-icon-${computedSize}`,
+    styles['c-icon'],
+    computedSize && styles[`c-icon-${computedSize}`],
     className
   )
 
@@ -120,8 +120,7 @@ CIcon.propTypes = {
   className: PropTypes.string,
   name: PropTypes.string,
   content: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-  size: PropTypes.oneOf([
-    'custom', 'custom-size', 'sm', 'lg', 'xl',
+  size: PropTypes.oneOf([ 'sm', 'lg', 'xl',
     '2xl', '3xl', '4xl', '5xl', '6xl', '7xl', '8xl', '9xl'
   ]),
   customClasses: PropTypes.oneOfType([PropTypes.string, PropTypes.array, PropTypes.object]),

@@ -49,7 +49,7 @@ const CIcon = props => {
     } else if (name && React.icons) {
       return React.icons[iconName] ? React.icons[iconName] :
         colog(`CIcon component: icon name '${iconName}' does not exist in React.icons object. ` +
-              `To use icons by 'name' prop you need to make them available globally ` + 
+              `To use icons by 'name' prop you need to make them available globally ` +
               `by adding them to React.icons object. CIcon component docs: https://coreui.io/react/docs/components/CIcon \n`,
               iconName
             )
@@ -134,7 +134,7 @@ export default CIcon
 
 export const CIconWarn = props => {
   colog(
-    '@coreui/icons-react: Please use default export since named exports are deprecated'
+    '@coreui/icons-nextjs: Please use default export since named exports are deprecated'
   )
   return <CIcon {...props}/>
 }

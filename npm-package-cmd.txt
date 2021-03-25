@@ -1,0 +1,21 @@
+npm install
+npm run build
+
+
+del coreui-icons-nextjs-1.1.0.tgz
+
+npm pack
+to <pkg_name>-<pkg_ver>.tgz
+
+local:
+npm install file:coreui-icons-nextjs-1.1.0.tgz
+
+from cdn:
+npm install http://0.0.0.0/coreui-icons-nextjs-1.1.0
+
+
+on proj:
+
+import {
+  CIcon,
+} from '@coreui/coreui-icons-nextjs';

@@ -9,7 +9,7 @@ module.exports = {
         'react-dom': 'ReactDom',
         'react-router': 'ReactRouter',
         'react-router-dom': 'ReactRouterDom',
-        '@coreui/react' : 'CoreUIReact'
+        '@coreui/nextjs' : 'CoreUIReact'
       }
     }
   }

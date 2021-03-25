@@ -16,7 +16,7 @@
 ##### install:
 ```bash
 npm install @coreui/icons
-npm install @coreui/icons-react
+npm install @coreui/icons-nextjs
 ```
 
 ##### import: 

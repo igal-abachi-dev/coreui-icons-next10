@@ -1,7 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import styles from './CIcon.css'
 
 let warned = {}
 const colog = (msg, icon) => {
@@ -74,13 +73,101 @@ const CIcon = props => {
   })()
 
   //render
-  const computedClasses = classNames(
-    styles['c-icon'],
-    computedSize && styles[`c-icon-${computedSize}`],
-    className
-  )
 
-  const classes = customClasses || computedClasses
+    let iconSize = {
+        width: "1rem",
+        height: "1rem",
+        fontSize: "1rem"
+    };
+    switch (computedSize) {
+        case 'xl':
+            iconSize = {
+                width: "1.5rem",
+                height: "1.5rem",
+                fontSize: "1.5rem"
+            };
+            break;
+        case 'lg':
+            iconSize = {
+                width: "1.25rem",
+                height: "1.25rem",
+                fontSize: "1.25rem"
+            };
+            break;
+        case 'sm':
+            iconSize = {
+                width: "0.875rem",
+                height: "0.875rem",
+                fontSize: "0.875rem"
+            };
+            break;
+
+        case '2xl':
+            iconSize = {
+                width: "2rem",
+                height: "2rem",
+                fontSize: "2rem"
+            };
+            break;
+        case '3xl':
+            iconSize = {
+                width: "3rem",
+                height: "3rem",
+                fontSize: "3rem"
+            };
+            break;
+        case '4xl':
+            iconSize = {
+                width: "4rem",
+                height: "4rem",
+                fontSize: "4rem"
+            };
+            break;
+        case '5xl':
+            iconSize = {
+                width: "5rem",
+                height: "5rem",
+                fontSize: "5rem"
+            };
+            break;
+        case '6xl':
+            iconSize = {
+                width: "6rem",
+                height: "6rem",
+                fontSize: "6rem"
+            };
+            break;
+        case '7xl':
+            iconSize = {
+                width: "7rem",
+                height: "7rem",
+                fontSize: "7rem"
+            };
+            break;
+        case '8xl':
+            iconSize = {
+                width: "8rem",
+                height: "8rem",
+                fontSize: "8rem"
+            };
+            break;
+        case '9xl':
+            iconSize = {
+                width: "9rem",
+                height: "9rem",
+                fontSize: "9rem"
+            };
+            break;
+    }
+    let iconStyle = {
+        Display: "inline-block",
+        color: "inherit",
+        textAlign: "center",
+        fill: "currentColor",
+        ...iconSize
+    };
+
+  const classes = customClasses || className
 
   return (
     <React.Fragment>
@@ -90,6 +177,7 @@ const CIcon = props => {
           xmlns="http://www.w3.org/2000/svg"
           viewBox={viewBox}
           className={classes}
+          style={iconStyle}
           role="img"
           dangerouslySetInnerHTML={{__html: titleCode + iconCode}}
         />
@@ -98,6 +186,7 @@ const CIcon = props => {
         <img
           {...attributes}
           className={className}
+          style={iconStyle}
           src={src}
           role="img"
         />
@@ -107,6 +196,7 @@ const CIcon = props => {
           {...attributes}
           xmlns="http://www.w3.org/2000/svg"
           className={classes}
+          style={iconStyle}
           role="img"
         >
           <use href={use}></use>
